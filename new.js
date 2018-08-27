@@ -1,12 +1,11 @@
 let albumArt = document.querySelector('.album-art-container')
 let info = document.querySelector('.album-info')
-
+//put images of albums on the screen
 fetch('https://lit-fortress-6467.herokuapp.com/object')
   .then(function(data) {
     return data.json()
   }).then(function(results) {
     let ultimatePlaylist = [];
-
     for (let i = 0; i < results.results.length; i++) {
       let newImg = document.createElement('img')
       newImg.setAttribute('src', `./images/${results.results[i].cover_art}`);
@@ -22,23 +21,24 @@ fetch('https://lit-fortress-6467.herokuapp.com/object')
         ultimatePlaylist.push(`${results.results[i].artist}: ${results.results[i].title}`)
       }
     }
-//make the clear button work
-    let clearButton = document.querySelector('.clear-tracks')
-    clearButton.addEventListener('click', function() {
-      info.innerText = '';
-      ultiamtePlaylist = []
-    });
-//submit the info and get the post request
-    let submitButton = document.querySelector('.submit-bin')
-    submitButton.addEventListener('click', function(){
-      let httpRequest = new XMLHttpRequest()
-      httpRequest.open('POST', 'https://lit-fortress-6467.herokuapp.com/post', true);
-      httpRequest.send(ultimatePlaylist);
-      httpRequest.onreadystatechange = function()
-        {
-            if (httpRequest.readyState == 4)
-              if (httpRequest.status == 200)
-                console.log(httpRequest)
-        };
-    })
+//make the clear button work and submit the post request
+let clearTracks = document.getElementById("clear-tracks");
+let submitBin = document.getElementById("submit-bin");
+clearTracks.addEventListener("click", e => {
+  document.querySelector(".album--art-container").innerHTML = "";
+});
+submitBin.addEventListener("click", e => {
+  if (playlist) {
+    axios
+      .post("https://lit-fortress-6467.herokuapp.com/post", playlist)
+      .then(response => {
+        console.log(response.data);
+        document.querySelector(".album--art-container").innerHTML = "";
+      })
+      .catch(err => {
+        console.log(err.message);
+      });
+  }
+});
+console.log(playlist);
 });
