@@ -1,5 +1,5 @@
-let topDiv = document.querySelector('.album-art-container')
-let middleDiv = document.querySelector('.album-info')
+let albumArt = document.querySelector('.album-art-container')
+let info = document.querySelector('.album-info')
 
 fetch('https://lit-fortress-6467.herokuapp.com/object')
   .then(function(data) {
@@ -12,21 +12,23 @@ fetch('https://lit-fortress-6467.herokuapp.com/object')
       newImg.setAttribute('src', `./images/${results.results[i].cover_art}`);
       newImg.setAttribute('class', `album-art ${i}`)
       newImg.addEventListener('click', putInMiddle)
-      topDiv.appendChild(newImg)
+      albumArt.appendChild(newImg)
 
       function putInMiddle() {
         let albumInfo = document.createElement('p');
         albumInfo.innerText = `${results.results[i].artist}: ${results.results[i].title}`;
-        middleDiv.appendChild(albumInfo)
+        info.appendChild(albumInfo)
 
         ultimatePlaylist.push(`${results.results[i].artist}: ${results.results[i].title}`)
       }
     }
+
     let clearButton = document.querySelector('.clear-tracks')
     clearButton.addEventListener('click', function() {
-      middleDiv.innerText = '';
+      info.innerText = '';
       ultiamtePlaylist = []
     });
+
     let submitButton = document.querySelector('.submit-bin')
     submitButton.addEventListener('click', function(){
       let httpRequest = new XMLHttpRequest()
