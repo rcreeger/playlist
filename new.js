@@ -22,13 +22,13 @@ fetch('https://lit-fortress-6467.herokuapp.com/object')
         ultimatePlaylist.push(`${results.results[i].artist}: ${results.results[i].title}`)
       }
     }
-
+//make the clear button work
     let clearButton = document.querySelector('.clear-tracks')
     clearButton.addEventListener('click', function() {
       info.innerText = '';
       ultiamtePlaylist = []
     });
-
+//submit the info and get the post request
     let submitButton = document.querySelector('.submit-bin')
     submitButton.addEventListener('click', function(){
       let httpRequest = new XMLHttpRequest()
