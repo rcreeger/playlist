@@ -73,10 +73,6 @@ button {
 .three {
   bottom: 0px;
 }
-.header {
-  flex-grow: 1;
-  font-size: 1.2rem;
-}
 .othercontainer {
   align-items: stretch;
   display: flex;
@@ -85,8 +81,9 @@ button {
 .album-header {
   background-color: #9A9C8C;
   color: #FFFFFF;
+  font-family: "AvenirNextLTPro-Regular";
   flex-grow: 1;
-  font-size: 1.6rem;
+  font-size: 3rem;
   height: 150px;
   position: relative;
 }
@@ -104,9 +101,6 @@ button {
   justify-content: center;
   overflow-x: auto;
   width: 100%;
-}
-.album-showcase img {
-  flex: 0 0 auto;
 }
  .album-art {
   height: 100px;
@@ -128,17 +122,19 @@ button {
   display: flex;
   margin-left: 5%;
   margin-top: 20px;
+  font-family: "AvenirNextLTPro-Regular";
 }
 .album-info-buttons button {
   background-color: #343625;
   color: white;
   font-size: 1.2rem;
+  font-family: "AvenirNextLTPro-Regular";
 }
 .footer {
   background-color: #676958;
   bottom: 0;
   color: #DADAD7;
-  font-size: 1.6rem;
+  font-size: 1rem;
   height: 2.4rem;
   padding-left: 5rem;
   position: absolute;
