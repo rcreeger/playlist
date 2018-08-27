@@ -2,10 +2,39 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Splash Page</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" defer src="app.js"></script>
+    <style media="screen">
+    </style>
   </head>
   <body>
-      
-
+    <div class="header"></div>
+    <div class="container">
+      <div class="left-panel">
+        <div>
+          <p class="track-bin">track bin<p>
+        </div>
+        <div>
+            <a href="./playlistpage.html">
+          <button type="button" class="tracks-button" id="new-page" name="Choose-Tracks">Choose Tracks</button>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div>
+          <div class="railroad-container">
+            <img class="railroad"src="resources/track.jpg" alt="tracks">
+            <img class="album one" id="one" src="" alt="">
+            <img class="album two" id="two" src="" alt="">
+            <img class="album three" id="three" src="" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><pre> &copy; 2018 Richard Creeger</pre></div>
   </body>
 </html>
