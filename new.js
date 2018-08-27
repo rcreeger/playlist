@@ -25,13 +25,13 @@ fetch('https://lit-fortress-6467.herokuapp.com/object')
     let clearButton = document.querySelector('.clear-tracks')
     clearButton.addEventListener('click', function() {
       middleDiv.innerText = '';
-      finalPlaylist = []
+      ultiamtePlaylist = []
     });
     let submitButton = document.querySelector('.submit-bin')
     submitButton.addEventListener('click', function(){
       let httpRequest = new XMLHttpRequest()
       httpRequest.open('POST', 'https://lit-fortress-6467.herokuapp.com/post', true);
-      httpRequest.send(finalPlaylist);
+      httpRequest.send(ultimatePlaylist);
       httpRequest.onreadystatechange = function()
         {
             if (httpRequest.readyState == 4)
