@@ -12,29 +12,29 @@ fetch('https://lit-fortress-6467.herokuapp.com/object')
   .then(function(data) {
     return data.json()
   }).then(function(results) {
-    let random1 = getRandom(0,4)
-    let random2 = getRandom(0,4)
-    let random3 = getRandom(0,4)
+    let randomAlbum1 = getRandom(0,4)
+    let randomAlbum2 = getRandom(0,4)
+    let randomAlbum3 = getRandom(0,4)
 
-    firstAlbum.setAttribute('src', `./images/${results.results[random1].cover_art}`)
+    firstAlbum.setAttribute('src', `./images/${results.results[randomAlbum1].cover_art}`)
 
-    if (random2 !== random1) {
-      secondAlbum.setAttribute('src', `./images/${results.results[random2].cover_art}`)
+    if (randomAlbum2 !== randomAlbum1) {
+      secondAlbum.setAttribute('src', `./images/${results.results[randomAlbum2].cover_art}`)
     }else {
       for(let i=0; i<5; i++){
-        if(random1 !== i){
-          random2 = i;
-          secondAlbum.setAttribute('src', `./images/${results.results[random2].cover_art}`)
+        if(randomAlbum1 !== i){
+          randomAlbum2 = i;
+          secondAlbum.setAttribute('src', `./images/${results.results[randomAlbum2].cover_art}`)
         }
       }
     }
-    if(random3 !== random2 && random3 !== random1) {
-      thirdAlbum.setAttribute('src', `./images/${results.results[random3].cover_art}`)
+    if(randomAlbum3 !== randomAlbum2 && randomAlbum3 !== randomAlbum1) {
+      thirdAlbum.setAttribute('src', `./images/${results.results[randomAlbum3].cover_art}`)
     }else {
       for(let j=0; j<5; j++){
-        if(random1 !== j && random2 !== j){
-          random3 = j
-          thirdlbum.setAttribute('src', `./images/${results.results[random3].cover_art}`)
+        if(randomAlbum1 !== j && randomAlbum2 !== j){
+          randomAlbum3 = j
+          thirdlbum.setAttribute('src', `./images/${results.results[randomAlbum3].cover_art}`)
         }
       }
     }
