@@ -25,7 +25,7 @@ fetch('https://lit-fortress-6467.herokuapp.com/object')
 let clearTracks = document.getElementById("clear-tracks");
 let submitBin = document.getElementById("submit-bin");
 clearTracks.addEventListener("click", e => {
-  document.querySelector(".album--art-container").innerHTML = "";
+  document.querySelector(".album-art-container").innerHTML = "";
 });
 submitBin.addEventListener("click", e => {
   if (playlist) {
@@ -33,7 +33,7 @@ submitBin.addEventListener("click", e => {
       .post("https://lit-fortress-6467.herokuapp.com/post", playlist)
       .then(response => {
         console.log(response.data);
-        document.querySelector(".album--art-container").innerHTML = "";
+        document.querySelector(".album-art-container").innerHTML = "";
       })
       .catch(err => {
         console.log(err.message);
